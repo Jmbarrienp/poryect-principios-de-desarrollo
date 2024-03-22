@@ -1,0 +1,74 @@
+import java.awt.*;
+import javax.swing.*;
+
+public class MyPanel extends JPanel {
+    // Componentes
+    private JLabel caloriasLabel;
+    private JTextField caloriasField;
+    private JLabel proteinaLabel;
+    private JTextField proteinaField;
+    private JLabel planAlimenticioLabel;
+    private JTextArea[] diasTextArea;
+    private JLabel[] diasLabel;
+
+    public MyPanel() {
+        // Inicialización de componentes
+        caloriasLabel = new JLabel("La cantidad de calorías que requieres consumir a diario es de:");
+        caloriasField = new JTextField(5);
+        proteinaLabel = new JLabel("La cantidad de gramos de proteína que debes consumir es de:");
+        proteinaField = new JTextField(5);
+        planAlimenticioLabel = new JLabel("*TU PLAN ALIMENTICIO*");
+        diasTextArea = new JTextArea[7];
+        diasLabel = new JLabel[7];
+        for (int i = 0; i < 7; i++) {
+            diasTextArea[i] = new JTextArea(5, 5);
+            diasLabel[i] = new JLabel();
+        }
+
+        // Establecer diseño y tamaño del panel
+        setPreferredSize(new Dimension(944, 557));
+        setLayout(new BorderLayout());
+
+        // Panel superior para la entrada de calorías y proteínas
+        JPanel inputPanel = new JPanel(new GridLayout(2, 2, 5, 5));
+        inputPanel.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
+        inputPanel.add(caloriasLabel);
+        inputPanel.add(caloriasField);
+        inputPanel.add(proteinaLabel);
+        inputPanel.add(proteinaField);
+
+        // Panel central para mostrar el plan alimenticio
+        JPanel planPanel = new JPanel(new GridLayout(2, 7, 10, 10));
+        planPanel.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
+        planPanel.add(new JLabel()); // Espacio en blanco
+        planPanel.add(new JLabel("Lunes", SwingConstants.CENTER));
+        planPanel.add(new JLabel("Martes", SwingConstants.CENTER));
+        planPanel.add(new JLabel("Miércoles", SwingConstants.CENTER));
+        planPanel.add(new JLabel("Jueves", SwingConstants.CENTER));
+        planPanel.add(new JLabel("Viernes", SwingConstants.CENTER));
+        planPanel.add(new JLabel("Sábado", SwingConstants.CENTER));
+        planPanel.add(new JLabel("Domingo", SwingConstants.CENTER));
+
+        // Añadir días de la semana y áreas de texto correspondientes
+        planPanel.add(new JLabel("Desayuno", SwingConstants.RIGHT));
+        for (JTextArea textArea : diasTextArea) {
+            planPanel.add(textArea);
+        }
+
+        // Agregar componentes al panel principal
+        add(inputPanel, BorderLayout.NORTH);
+        add(planPanel, BorderLayout.CENTER);
+        add(planAlimenticioLabel, BorderLayout.SOUTH);
+    }
+
+    public static void main(String[] args) {
+        SwingUtilities.invokeLater(() -> {
+            JFrame frame = new JFrame("Plan Alimenticio");
+            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            frame.getContentPane().add(new MyPanel());
+            frame.pack();
+            frame.setLocationRelativeTo(null); // Centrar ventana en la pantalla
+            frame.setVisible(true);
+        });
+    }
+}
