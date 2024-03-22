@@ -1,0 +1,158 @@
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+import javax.swing.event.*;
+
+public class MyPanel extends JPanel {
+    private JButton jcomp1;
+    private JComboBox jcomp2;
+    private JLabel jcomp3;
+    private JLabel jcomp4;
+    private JLabel jcomp5;
+    private JLabel jcomp6;
+    private JLabel jcomp7;
+    private JComboBox jcomp8;
+    private JLabel jcomp9;
+    private JComboBox jcomp10;
+    private JLabel jcomp11;
+    private JComboBox jcomp12;
+    private JLabel jcomp13;
+    private JTextField jcomp14;
+    private JTextField jcomp15;
+    private JTextField jcomp16;
+    private JTextField jcomp17;
+    private JRadioButton jcomp18;
+    private JRadioButton jcomp19;
+    private JRadioButton jcomp20;
+    private JRadioButton jcomp21;
+    private JRadioButton jcomp22;
+    private JRadioButton jcomp23;
+    private JRadioButton jcomp24;
+    private JRadioButton jcomp25;
+    private JRadioButton jcomp26;
+    private JRadioButton jcomp27;
+    private JRadioButton jcomp28;
+    private JRadioButton jcomp29;
+    private JLabel jcomp30;
+    private JTextArea jcomp31;
+
+    public MyPanel() {
+        //construct preComponents
+        String[] jcomp2Items = {"Empezar proceso", "Valoracion"};
+        String[] jcomp8Items = {"Sedentario (No hago ejercicio)", "Poco activo (1 o 2 dias a la semana)", "Activo (3 a 4 dias a la  semana)", "Muy activo (5 dias o mas a la semana)"};
+        String[] jcomp10Items = {"Hombre", "Mujer"};
+        String[] jcomp12Items = {"Ganar masa muscular", "Mantener peso saludable", "Bajar porcentaje de grasa"};
+
+        //construct components
+        jcomp1 = new JButton ("¡Calcular tu mejor plan alimenticio!");
+        jcomp2 = new JComboBox (jcomp2Items);
+        jcomp3 = new JLabel ("Ingresa tu peso actual(kg):");
+        jcomp4 = new JLabel ("Ingresa tu estatura(cms):");
+        jcomp5 = new JLabel ("Ingresa tu % actual de grasa:");
+        jcomp6 = new JLabel ("Ingresa tu edad:");
+        jcomp7 = new JLabel ("¿Que tan activo eres?");
+        jcomp8 = new JComboBox (jcomp8Items);
+        jcomp9 = new JLabel ("¿Eres hombre o mujer?");
+        jcomp10 = new JComboBox (jcomp10Items);
+        jcomp11 = new JLabel ("¿Cual es tu objetivo?");
+        jcomp12 = new JComboBox (jcomp12Items);
+        jcomp13 = new JLabel ("¿Que comidas no te gustan?");
+        jcomp14 = new JTextField (5);
+        jcomp15 = new JTextField (5);
+        jcomp16 = new JTextField (5);
+        jcomp17 = new JTextField (5);
+        jcomp18 = new JRadioButton ("Huevo");
+        jcomp19 = new JRadioButton ("Pollo");
+        jcomp20 = new JRadioButton ("Carne de Res");
+        jcomp21 = new JRadioButton ("Carne de Cerdo");
+        jcomp22 = new JRadioButton ("Leche");
+        jcomp23 = new JRadioButton ("Pescado");
+        jcomp24 = new JRadioButton ("Atun");
+        jcomp25 = new JRadioButton ("Aguacate");
+        jcomp26 = new JRadioButton ("Frutos secos");
+        jcomp27 = new JRadioButton ("Yogurt griego");
+        jcomp28 = new JRadioButton ("Arroz");
+        jcomp29 = new JRadioButton ("Sopas");
+        jcomp30 = new JLabel ("¿Otro(s)?");
+        jcomp31 = new JTextArea (5, 5);
+
+        //adjust size and set layout
+        setPreferredSize (new Dimension (944, 557));
+        setLayout (null);
+
+        //add components
+        add (jcomp1);
+        add (jcomp2);
+        add (jcomp3);
+        add (jcomp4);
+        add (jcomp5);
+        add (jcomp6);
+        add (jcomp7);
+        add (jcomp8);
+        add (jcomp9);
+        add (jcomp10);
+        add (jcomp11);
+        add (jcomp12);
+        add (jcomp13);
+        add (jcomp14);
+        add (jcomp15);
+        add (jcomp16);
+        add (jcomp17);
+        add (jcomp18);
+        add (jcomp19);
+        add (jcomp20);
+        add (jcomp21);
+        add (jcomp22);
+        add (jcomp23);
+        add (jcomp24);
+        add (jcomp25);
+        add (jcomp26);
+        add (jcomp27);
+        add (jcomp28);
+        add (jcomp29);
+        add (jcomp30);
+        add (jcomp31);
+
+        //set component bounds (only needed by Absolute Positioning)
+        jcomp1.setBounds (330, 480, 295, 55);
+        jcomp2.setBounds (330, 10, 295, 55);
+        jcomp3.setBounds (30, 115, 185, 25);
+        jcomp4.setBounds (30, 145, 185, 25);
+        jcomp5.setBounds (30, 175, 185, 25);
+        jcomp6.setBounds (30, 205, 185, 25);
+        jcomp7.setBounds (30, 235, 190, 25);
+        jcomp8.setBounds (30, 260, 285, 25);
+        jcomp9.setBounds (30, 290, 190, 25);
+        jcomp10.setBounds (30, 315, 130, 25);
+        jcomp11.setBounds (30, 345, 255, 25);
+        jcomp12.setBounds (30, 370, 285, 30);
+        jcomp13.setBounds (380, 115, 165, 25);
+        jcomp14.setBounds (215, 115, 100, 25);
+        jcomp15.setBounds (215, 145, 100, 25);
+        jcomp16.setBounds (215, 175, 100, 25);
+        jcomp17.setBounds (215, 205, 100, 25);
+        jcomp18.setBounds (575, 115, 100, 25);
+        jcomp19.setBounds (575, 145, 100, 25);
+        jcomp20.setBounds (575, 175, 120, 25);
+        jcomp21.setBounds (575, 205, 120, 25);
+        jcomp22.setBounds (575, 235, 100, 25);
+        jcomp23.setBounds (575, 265, 100, 25);
+        jcomp24.setBounds (695, 115, 100, 25);
+        jcomp25.setBounds (695, 145, 100, 25);
+        jcomp26.setBounds (695, 175, 100, 25);
+        jcomp27.setBounds (695, 205, 105, 25);
+        jcomp28.setBounds (695, 235, 100, 25);
+        jcomp29.setBounds (695, 265, 100, 25);
+        jcomp30.setBounds (485, 305, 60, 25);
+        jcomp31.setBounds (560, 305, 270, 110);
+    }
+
+
+    public static void main (String[] args) {
+        JFrame frame = new JFrame ("MyPanel");
+        frame.setDefaultCloseOperation (JFrame.EXIT_ON_CLOSE);
+        frame.getContentPane().add (new MyPanel());
+        frame.pack();
+        frame.setVisible (true);
+    }
+}
